@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   resources :needees
 
   # You can have the root of your site routed with "root"
-  root 'home#land'
+  authenticated :user do
+    root to: 'home#dash', as: :authenticated_root
+  end
+  root to: 'home#land'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

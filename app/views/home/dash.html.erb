@@ -1,0 +1,12 @@
+<form id="filterForm" class="text-center" action="<%= needees_path %>" method="get">
+  <h1>I would like top help in</h1>
+  <div class="form-group">
+    <%= select_tag(:help_type, options_for_select(Needee::HelpType.helps), class: "btn btn-info") %>
+  </div>
+  <h1>at</h1>
+  <div class="form-group">
+    <%= select_tag(:locality_id, options_for_select(@localities.collect{|loc| [loc.name, loc.id]}), class: "btn btn-info") %>
+  </div>
+
+  <button type="submit" class="btn btn-primary btn-lg">Go!</button>
+</form>

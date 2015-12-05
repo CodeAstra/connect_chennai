@@ -23,6 +23,10 @@ class Needee < ActiveRecord::Base
     def self.needs
       [GET_OUT, FOOD, SHELTER].collect{|need| OpenStruct.new need}
     end
+
+    def self.helps
+      [GET_OUT, FOOD, SHELTER, VOLUNTEER].collect{|help| [help[:text], help[:code]]}
+    end
   end
 
   belongs_to :locality
