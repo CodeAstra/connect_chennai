@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151205065830) do
+ActiveRecord::Schema.define(version: 20151205104530) do
 
   create_table "localities", force: :cascade do |t|
     t.string   "name"
@@ -48,9 +48,13 @@ ActiveRecord::Schema.define(version: 20151205065830) do
     t.string   "uid"
     t.string   "name"
     t.string   "image"
+    t.string   "phone"
+    t.integer  "locality_id"
+    t.integer  "type_of_help"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["locality_id"], name: "index_users_on_locality_id"
   add_index "users", ["provider"], name: "index_users_on_provider"
   add_index "users", ["uid"], name: "index_users_on_uid"
 
