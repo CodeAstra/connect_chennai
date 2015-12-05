@@ -11,7 +11,12 @@ class NeedeesController < ApplicationController
       @help_type = current_user.type_of_help
       @locality_id = current_user.locality_id
     end
-    @needees = Needee.where(type_of_help: @help_type, locality_id: @locality_id).order(id: :desc)
+
+    if @help_type == Needee::HelpType::VOLUNTEER[:code]
+      @needees = Needee.where(locality_id: @locality_id).order(id: :desc)
+    else
+      @needees = Needee.where(type_of_help: @help_type, locality_id: @locality_id).order(id: :desc)
+    end
     @localities = Locality.all
   end
 
