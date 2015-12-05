@@ -18,6 +18,7 @@ gem 'annotate'
 group :development, :test do
   gem 'sqlite3'
   gem 'byebug'
+  gem 'dotenv-rails', :require => 'dotenv/rails-now'
 end
 
 group :development do
@@ -29,3 +30,5 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
+
+gem "recaptcha", require: "recaptcha/rails"
