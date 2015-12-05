@@ -30,7 +30,7 @@ class Needee < ActiveRecord::Base
     end
 
     def self.helps
-      [GET_OUT, FOOD, SHELTER, VOLUNTEER].collect{|help| [help[:text], help[:code]]}
+      [GET_OUT, FOOD, SHELTER, SEARCH, VOLUNTEER].collect{|help| [help[:text], help[:code]]}
     end
 
     def self.help_name(code)
