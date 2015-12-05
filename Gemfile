@@ -10,7 +10,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass'
 gem 'bootswatch-rails'
-# gem 'devise'
 gem 'simple_form'
 gem 'font-awesome-rails'
 gem 'annotate'
@@ -32,3 +31,4 @@ group :production do
 end
 
 gem "recaptcha", require: "recaptcha/rails"
+gem 'devise'
