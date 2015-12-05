@@ -21,7 +21,7 @@ class Needee < ActiveRecord::Base
     VOLUNTEER = {code: 4, text: "Volunteer Work"}
 
     def self.needs
-      [GET_OUT, FOOD, SHELTER, VOLUNTEER].collect{|need| OpenStruct.new need}
+      [GET_OUT, FOOD, SHELTER].collect{|need| OpenStruct.new need}
     end
   end
 
