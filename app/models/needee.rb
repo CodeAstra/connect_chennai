@@ -27,6 +27,12 @@ class Needee < ActiveRecord::Base
     def self.helps
       [GET_OUT, FOOD, SHELTER, VOLUNTEER].collect{|help| [help[:text], help[:code]]}
     end
+
+    def self.help_name(code)
+      self.helps.each do |arr|
+        return arr[0] if arr[1] == code
+      end
+    end
   end
 
   belongs_to :locality

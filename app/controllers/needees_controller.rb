@@ -1,4 +1,13 @@
 class NeedeesController < ApplicationController
+  def index
+    if params[:help_type]
+      @needees = Needee.where(type_of_help: params[:help_type], locality_id: params[:locality_id])
+    else
+      @needees = []
+    end
+    @localities = Locality.all
+  end
+
   def new
     @needee = Needee.new
     @localities = Locality.all
