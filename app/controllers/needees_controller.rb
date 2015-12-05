@@ -1,5 +1,9 @@
 class NeedeesController < ApplicationController
   def index
+    if current_user.profile_incomplete?
+      redirect_to edit_user_path(current_user)
+      return
+    end
     if params[:help_type]
       @help_type = params[:help_type].to_i
       @locality_id = params[:locality_id].to_i

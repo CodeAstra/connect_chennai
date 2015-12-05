@@ -1,0 +1,7 @@
+<h3>Please tell us a bit about you, so that we can better map you to the appropriate needy.</h3>
+<%= simple_form_for current_user do |f| %>
+  <%= f.input :locality_id, label: "Which area would you like to work in?", collection: @localities, label_method: :name, value_method: :id, include_blank: false %>
+  <%= f.input :type_of_help, label: "What kind of help would you like to offer?", collection: Needee::HelpType.all_needs, label_method: :text, value_method: :code, include_blank: false  %>
+  <%= f.input :phone, label: "Phone number on which we can reach you" %>
+  <%= f.submit "Save my preferences", class: "btn btn-primary" %>
+<% end %>

@@ -24,6 +24,10 @@ class Needee < ActiveRecord::Base
       [GET_OUT, FOOD, SHELTER].collect{|need| OpenStruct.new need}
     end
 
+    def self.all_needs
+      [GET_OUT, FOOD, SHELTER, VOLUNTEER].collect{|need| OpenStruct.new need}
+    end
+
     def self.helps
       [GET_OUT, FOOD, SHELTER, VOLUNTEER].collect{|help| [help[:text], help[:code]]}
     end
