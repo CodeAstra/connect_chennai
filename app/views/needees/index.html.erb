@@ -1,11 +1,11 @@
 <form class="well form-inline" action="<%= needees_path %>" method="get">
   <div class="form-group">
     <label>I would like to help in: </label>
-    <%= select_tag(:help_type, options_for_select(Needee::HelpType.helps), class: "form-control") %>
+    <%= select_tag(:help_type, options_for_select(Needee::HelpType.helps, @help_type), class: "form-control") %>
   </div>
   <div class="form-group">
     <label> at: </label>
-    <%= select_tag(:locality_id, options_for_select(@localities.collect{|loc| [loc.name, loc.id]}), class: "form-control") %>
+    <%= select_tag(:locality_id, options_for_select(@localities.collect{|loc| [loc.name, loc.id]}, @locality_id), class: "form-control") %>
   </div>
   <button type="submit" class="btn btn-primary">Go!</button>
 </form>

@@ -1,7 +1,9 @@
 class NeedeesController < ApplicationController
   def index
     if params[:help_type]
-      @needees = Needee.where(type_of_help: params[:help_type], locality_id: params[:locality_id])
+      @help_type = params[:help_type].to_i
+      @locality_id = params[:locality_id].to_i
+      @needees = Needee.where(type_of_help: @help_type, locality_id: @locality_id)
     else
       @needees = []
     end
