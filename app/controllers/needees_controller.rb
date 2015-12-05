@@ -7,10 +7,11 @@ class NeedeesController < ApplicationController
     if params[:help_type]
       @help_type = params[:help_type].to_i
       @locality_id = params[:locality_id].to_i
-      @needees = Needee.where(type_of_help: @help_type, locality_id: @locality_id)
     else
-      @needees = []
+      @help_type = current_user.type_of_help
+      @locality_id = current_user.locality_id
     end
+    @needees = Needee.where(type_of_help: @help_type, locality_id: @locality_id).order(id: :desc)
     @localities = Locality.all
   end
 
