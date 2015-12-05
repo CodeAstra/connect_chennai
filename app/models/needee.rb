@@ -15,10 +15,14 @@
 
 class Needee < ActiveRecord::Base
   module HelpType
-    GET_OUT   = 1
-    FOOD      = 2
-    SHELTER   = 3
-    VOLUNTEER = 4
+    GET_OUT   = {code: 1, text: "Get Out of Chennai"}
+    FOOD      = {code: 2, text: "Food"}
+    SHELTER   = {code: 3, text: "Shelter"}
+    VOLUNTEER = {code: 4, text: "Volunteer Work"}
+
+    def self.needs
+      [GET_OUT, FOOD, SHELTER, VOLUNTEER].collect{|need| OpenStruct.new need}
+    end
   end
 
   belongs_to :locality

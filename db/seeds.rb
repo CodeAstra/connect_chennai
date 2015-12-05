@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+LOCALITY_DATA = [
+  {name: "Adyar", position: "13.0063142,80.2417759"}
+];
+
+LOCALITY_DATA.each do |data|
+  Locality.find_or_create_by(name: data[:name]) do |locality|
+    locality.latitude, locality.longitude = data[:position].split(",")
+  end
+end
