@@ -32,3 +32,4 @@ end
 
 gem "recaptcha", require: "recaptcha/rails"
 gem 'devise'
+gem 'omniauth-facebook'
