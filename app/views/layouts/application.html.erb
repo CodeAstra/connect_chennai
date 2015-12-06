@@ -1,7 +1,14 @@
+<% website_title = "Connect Chennai - Bridging those who need with those who can" %>
+<% website_description = "Seek and get help for yourself or your relatives and friends in Chennai. Volunteers can connect with fellow volunteers and people looking for help in their locality" %>
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ConnectChennai</title>
+  <title><%= website_title %></title>
+  <meta property="og:site_name" content="<%= website_title %>"/>
+  <meta property="og:title" content="<%= website_title %>"/>
+  <meta property="og:url" content="http://connect-chennai.codeastra.com/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:description" content="<%= website_description %>"/>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
