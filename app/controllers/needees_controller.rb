@@ -17,6 +17,7 @@ class NeedeesController < ApplicationController
     else
       @needees = Needee.where(type_of_help: @help_type, locality_id: @locality_id).order(id: :desc)
     end
+    @volunteers = User.where(type_of_help: Needee::HelpType::VOLUNTEER[:code], locality_id: @locality_id).order(id: :desc)
     @localities = Locality.all
   end
 

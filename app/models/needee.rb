@@ -16,7 +16,7 @@
 class Needee < ActiveRecord::Base
   module HelpType
     GET_OUT   = {code: 1, text: "Getting Out of Chennai"}
-    FOOD      = {code: 2, text: "Food"}
+    FOOD      = {code: 2, text: "Food, Clothes and Supplies"}
     SHELTER   = {code: 3, text: "Shelter"}
     SEARCH    = {code: 4, text: "Search and Find"}
     VOLUNTEER = {code: 5, text: "Volunteer Work"}

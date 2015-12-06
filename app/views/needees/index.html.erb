@@ -10,32 +10,80 @@
   <button type="submit" class="btn btn-primary">Go!</button>
 </form>
 
-<% if @needees.any? %>
-  <table class="table table-striped table-hover">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Name</th>
-        <th>Locality</th>
-        <th>Help Needed</th>
-        <th>Phone</th>
-        <th>Address</th>
-        <th>Details</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% (0...@needees.count).each do |i| %>
-        <% needee = @needees[i] %>
-        <tr>
-          <td><%= needee.id %></td>
-          <td><%= needee.name %></td>
-          <td><%= @localities.select{|loc| loc.id == needee.locality_id}.first.name %></td>
-          <td><%= Needee::HelpType.help_name(needee.type_of_help) %></td>
-          <td><%= needee.phone %></td>
-          <td><%= needee.address %></td>
-          <td><%= needee.details %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% end %>
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active"><a href="#needees" aria-controls="home" role="tab" data-toggle="tab">People in Need</a></li>
+  <li role="presentation"><a href="#volunteers" aria-controls="profile" role="tab" data-toggle="tab">Volunteers Who can Help You</a></li>
+</ul>
+
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane active" id="needees">
+
+    <% if @needees.any? %>
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Locality</th>
+            <th>Help Needed</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% (0...@needees.count).each do |i| %>
+            <% needee = @needees[i] %>
+            <tr>
+              <td><%= needee.id %></td>
+              <td><%= needee.name %></td>
+              <td><%= @localities.select{|loc| loc.id == needee.locality_id}.first.name %></td>
+              <td><%= Needee::HelpType.help_name(needee.type_of_help) %></td>
+              <td><%= needee.phone %></td>
+              <td><%= needee.address %></td>
+              <td><%= needee.details %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <div class="well">
+        <h4>
+          There are no people looking for need in this locality at this point of time.<br>
+          Please try another nearby locality.
+        </h4>
+      </div>
+    <% end %>
+  </div>
+  <div role="tabpanel" class="tab-pane" id="volunteers">
+    <% if @volunteers.any? %>
+      <div class="well">
+        <h4>
+          You may consider working with the following volunteers.
+        </h4>
+      </div>
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Phone</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @volunteers.each do |vol| %>
+            <tr>
+              <td><%= vol.name %></td>
+              <td><%= vol.phone %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <div class="well">
+        <h4>
+          There are no volunteers in this locality at this point of time.
+        </h4>
+      </div>
+    <% end %>
+  </div>
+</div>
