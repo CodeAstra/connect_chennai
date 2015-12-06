@@ -18,19 +18,20 @@ class Needee < ActiveRecord::Base
     GET_OUT   = {code: 1, text: "Getting Out of Chennai"}
     FOOD      = {code: 2, text: "Food, Clothes and Supplies"}
     SHELTER   = {code: 3, text: "Shelter"}
-    SEARCH    = {code: 4, text: "Search, Find and Rescue"}
+    SEARCH    = {code: 4, text: "Search and Find and Rescue"}
     VOLUNTEER = {code: 5, text: "Volunteer Work"}
+    TRANSPORT = {code: 6, text: "Transport"}
 
     def self.needs
-      [GET_OUT, FOOD, SHELTER, SEARCH].collect{|need| OpenStruct.new need}
+      [GET_OUT, FOOD, SHELTER, SEARCH, TRANSPORT].collect{|need| OpenStruct.new need}
     end
 
     def self.all_needs
-      [GET_OUT, FOOD, SHELTER, SEARCH, VOLUNTEER].collect{|need| OpenStruct.new need}
+      [GET_OUT, FOOD, SHELTER, SEARCH, TRANSPORT, VOLUNTEER].collect{|need| OpenStruct.new need}
     end
 
     def self.helps
-      [GET_OUT, FOOD, SHELTER, SEARCH, VOLUNTEER].collect{|help| [help[:text], help[:code]]}
+      [GET_OUT, FOOD, SHELTER, SEARCH, TRANSPORT, VOLUNTEER].collect{|help| [help[:text], help[:code]]}
     end
 
     def self.help_name(code)
