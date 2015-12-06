@@ -1,6 +1,7 @@
 <%= simple_form_for @needee do |f| %>
   <%= f.input :name %>
   <%= f.input :phone %>
+  <%= f.input :alt_phone, label: "Alternate Phone Number", hint: "If you are posting for someone, please provide your phone number" %>
   <%= f.input :locality_id, collection: @localities, label_method: :name, value_method: :id, include_blank: false %>
   <%= f.input :type_of_help, collection: Needee::HelpType.needs, label_method: :text, value_method: :code, include_blank: false %>
   <%= f.input :address %>

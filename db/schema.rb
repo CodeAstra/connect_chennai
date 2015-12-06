@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151205104530) do
+ActiveRecord::Schema.define(version: 20151206073803) do
 
   create_table "localities", force: :cascade do |t|
     t.string   "name"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20151205104530) do
     t.integer  "type_of_help"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.string   "alt_phone"
   end
 
   add_index "needees", ["locality_id"], name: "index_needees_on_locality_id"

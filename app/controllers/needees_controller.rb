@@ -40,6 +40,6 @@ class NeedeesController < ApplicationController
 
 private
   def needee_params
-    params.require(:needee).permit(:name, :phone, :locality_id, :type_of_help, :address, :details)
+    params.require(:needee).permit(:name, :phone, :alt_phone, :locality_id, :type_of_help, :address, :details)
   end
 end

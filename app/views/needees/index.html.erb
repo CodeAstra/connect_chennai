@@ -27,6 +27,7 @@
             <th>Locality</th>
             <th>Help Needed</th>
             <th>Phone</th>
+            <th>Alt. Phone</th>
             <th>Address</th>
             <th>Details</th>
           </tr>
@@ -40,8 +41,9 @@
               <td><%= @localities.select{|loc| loc.id == needee.locality_id}.first.name %></td>
               <td><%= Needee::HelpType.help_name(needee.type_of_help) %></td>
               <td><%= needee.phone %></td>
-              <td><%= needee.address %></td>
-              <td><%= needee.details %></td>
+              <td><%= needee.alt_phone %></td>
+              <td><%= raw needee.address.gsub("\n", "<br>") %></td>
+              <td><%= raw needee.details.gsub("\n", "<br>") %></td>
             </tr>
           <% end %>
         </tbody>

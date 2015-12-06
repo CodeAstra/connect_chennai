@@ -126,6 +126,7 @@ LOCALITY_DATA = [
   {name: "Thirumullaivoyal", position: "13.1318032,80.1168267"},
   {name: "Thiruneermalai", position: "12.9591758,80.1104793"},
   {name: "Thiruvanmiyur",	position: "12.9837512,80.2518863"},
+  {name: "Thoraipakkam", position: "12.9365647,80.2205619"},
   {name: "Tiruverkadu",	position: "13.0729616,80.1192099"},
   {name: "Thiruvotriyur",	position: "13.1660688,80.2843844"},
   {name: "Tirusulam",	position: "12.9706872,80.1620093"},
