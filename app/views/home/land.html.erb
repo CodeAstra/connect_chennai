@@ -3,14 +3,22 @@
   <p>Connecting Volunteers and the needy.</p>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-md-6">
         <div class="well">
           <%= link_to "I Need Help", new_needee_path, class: "btn btn-block btn-primary btn-lg" %>
+          <ul class="text-left well">
+            <li>Post information about your needs</li>
+            <li>Post information about your nears and dears who need help</li>
+          </ul>
         </div>
       </div>
-      <div class="col-sm-6">
+      <div class="col-md-6">
         <div class="well">
-          <%= link_to "I Can Help (Facebook Login)", user_omniauth_authorize_path(:facebook), class: "btn btn-block btn-primary btn-lg" %> <br>
+          <%= link_to "I Can Help (Facebook Login)", user_omniauth_authorize_path(:facebook), class: "btn btn-block btn-primary btn-lg" %>
+          <ul class="text-left well">
+            <li>Search for people looking for help in your locality</li>
+            <li>Find fellow volunteers who would be willing to join you</li>
+          </ul>
           <small>(We won't post on your wall)</small>
         </div>
       </div>
