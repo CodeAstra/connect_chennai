@@ -18,7 +18,7 @@ class Needee < ActiveRecord::Base
     GET_OUT   = {code: 1, text: "Getting Out of Chennai"}
     FOOD      = {code: 2, text: "Food, Clothes and Supplies"}
     SHELTER   = {code: 3, text: "Shelter"}
-    SEARCH    = {code: 4, text: "Search and Find"}
+    SEARCH    = {code: 4, text: "Search, Find and Rescue"}
     VOLUNTEER = {code: 5, text: "Volunteer Work"}
 
     def self.needs
