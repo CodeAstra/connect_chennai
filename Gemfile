@@ -13,6 +13,7 @@ gem 'bootswatch-rails'
 gem 'simple_form'
 gem 'font-awesome-rails'
 gem 'annotate'
+gem 'newrelic_rpm'
 
 group :development, :test do
   gem 'sqlite3'
